@@ -6,23 +6,7 @@ const bodyParser = require('body-parser')
 const { MongoClient } = require('mongodb')
 const url = require('url')
 const dns = require('dns')
-let Url;
-// functions
-// test valid url
-const testValidURL = (url) => {
-  const regex = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/)
-  return regex.test(url)
-}
-// create&save url
-const createAndSaveUrl = (url,number) => {
 
-  // what happens to my url argument?
-  let u = new Url({
-    original_url:url,
-    short_url: number
-  })
-  newUrl.save(newUrl)
-}
 //connect mongodb
 const client = new MongoClient  (process.env.MONGO_URI,{useNewUrlParser:true,useUnifiedTopology:true})
 const db = client.db("urlshort")
